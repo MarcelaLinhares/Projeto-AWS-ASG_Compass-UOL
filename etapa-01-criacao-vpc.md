@@ -6,7 +6,7 @@ A configuração foi realizada manualmente através do Console da AWS, garantind
 
 ---
 
-## 1.1 – Criação da VPC
+## 1. Criação da VPC
 
 >Acesse o console da AWS > **VPC > Suas VPCs > Criar VPC**
 
@@ -17,7 +17,7 @@ Foi criada uma **VPC personalizada** com o seguinte bloco CIDR:
 
 Essa VPC servirá como a base para todos os recursos que serão criados nas próximas etapas.
 
-## 1.2 – Criação das Subnets
+## 2. Criação das Subnets
 
 Foram criadas **quatro subnets**, sendo:
 
@@ -31,7 +31,7 @@ Foram criadas **quatro subnets**, sendo:
 
 Essa separação permite um melhor controle de acesso e segurança na infraestrutura.
 
-## 1.3 – Criação do Internet Gateway (IGW)
+## 3. Criação do Internet Gateway (IGW)
 
 Para permitir que as subnets públicas tenham acesso à internet, foi criado um **Internet Gateway (IGW)** com as seguintes configurações:
 
@@ -41,7 +41,7 @@ Para permitir que as subnets públicas tenham acesso à internet, foi criado um 
 
 ---
 
-## 1.4 – Configuração das Tabelas de Rotas
+## 4. Configuração das Tabelas de Rotas
 
 Para garantir o roteamento correto entre os recursos da VPC e a internet, foram criadas **três tabelas de rotas**, sendo:
 
@@ -50,7 +50,7 @@ Para garantir o roteamento correto entre os recursos da VPC e a internet, foram 
 
 ---
 
-## 1.5 – Mapa de Recursos da VPC
+## 5. Mapa de Recursos da VPC
 
 Após a criação de todos os recursos acima, foi gerado o **Mapa de Recursos da VPC**, mostrando visualmente a estrutura criada.
 
@@ -65,4 +65,4 @@ A infraestrutura de rede está pronta para os próximos passos do projeto, como 
 
 ---
 
-### **[🔙 Voltar - README Principal](README.md) | [➡️ Avançar - Etapa 02](etapa-02-grupo-seguranca.md)**
+### **[🔙 Voltar - README Principal](https://github.com/MarcelaLinhares/Projeto-AWS-ASG_Compass-UOL) | [➡️ Avançar - Etapa 02](etapa-02-grupo-seguranca.md)**
