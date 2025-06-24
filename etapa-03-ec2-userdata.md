@@ -21,19 +21,61 @@ Foram utilizadas as seguintes configurações:
 
 ## 2. Configuração do User Data
 
-Durante o lançamento da instância, foi inserido o seguinte **User Data**, com o objetivo de instalar o Apache e criar uma página HTML simples:
+Durante o lançamento da instância, foi inserido o seguinte **User Data**, com o objetivo de:
+
+- Instalar o Apache HTTP Server
+
+- Criar uma página HTML de teste
+
+- Configurar um script CGI (`/teste.sh`) para simulação de carga
+
+- Habilitar a execução de scripts CGI no Apache
 
 ```bash
 #!/bin/bash
+
+# Atualiza o sistema
 yum update -y
+
+# Instala o Apache
 yum install -y httpd
+
+# Cria a página principal
+echo "Hello World" > /var/www/html/index.html
+
+# Cria o script CGI que simula carga
+cat <<EOL > /var/www/html/teste.sh
+#!/bin/bash
+echo "Content-type: text/plain"
+echo ""
+echo "Requisição recebida em \$(hostname)"
+sleep 5
+EOL
+
+# Dá permissão de execução
+chmod +x /var/www/html/teste.sh
+
+# Habilita execução de CGI no Apache
+echo '
+<Directory "/var/www/html">
+    Options +ExecCGI
+    AddHandler cgi-script .cgi .pl .sh
+</Directory>
+' > /etc/httpd/conf.d/enable-cgi.conf
+
+# Inicia e habilita Apache no boot
 systemctl start httpd
 systemctl enable httpd
-echo "Hello World" > /var/www/html/index.html
 ```
-> Esse script faz a instalação do Apache, inicia o serviço e cria uma página HTML de teste com a mensagem de confirmação.
+> Este script garante que a instância estará pronta para atender requisições HTTP, incluindo o endpoint `/teste.sh` para simulação de carga.
 
-## 3. Verificação da Instância e Acesso ao Endpoint HTTP
+## 3. Tags de Recurso
+
+As **tags obrigatórias** foram adicionadas conforme solicitado no projeto.
+
+> 🔐 **Importante:** Por motivos de segurança, **os valores reais das tags não estão sendo exibidos nesta documentação**.
+
+## 4. Verificação da Instância e Acesso ao Endpoint HTTP
 
 Após o lançamento da instância, foram realizadas as seguintes validações:
 
@@ -45,11 +87,7 @@ Após o lançamento da instância, foram realizadas as seguintes validações:
 
 ![Print da Página de teste exibida no navegador (endpoint HTTP)](img/04-etapa3-teste.png)
 
-## 4. Tags de Recurso
 
-As **tags obrigatórias** foram adicionadas conforme solicitado no projeto.
-
-> 🔐 **Importante:** Por motivos de segurança, **os valores reais das tags não estão sendo exibidos nesta documentação**.
 
 ## ✅ Conclusão da Etapa
 

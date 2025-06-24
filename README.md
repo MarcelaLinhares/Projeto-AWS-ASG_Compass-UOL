@@ -81,7 +81,7 @@ Geração de uma AMI a partir da instância EC2 configurada.
 
 ### ➤ Etapa 05 – Criação do Launch Template
 
-Criação de um Launch Template utilizando a AMI criada, definindo tipo de instância e User Data.
+Criação de um Launch Template utilizando a AMI criada, definindo tipo de instância e outras configurações necessárias.
 
 **[🔗 ACESSE O PASSO A PASSO COMPLETO DA ETAPA 05](etapa-05-launch-template.md)**<br><br>
 
