@@ -39,4 +39,4 @@ O **Launch Template** foi criado com sucesso e será utilizado na próxima etapa
 
 ---
 
-### **[🔙 Voltar - Etapa 04](etapa-04-criacao-ami.md) | [➡️ Avançar - Etapa 06](etapa-06-auto-scaling-group.md)**
+### **[🔙 Voltar - Etapa 04](etapa-04-criacao-ami.md) | [➡️ Avançar - Etapa 06](etapa-06-clb.md)**

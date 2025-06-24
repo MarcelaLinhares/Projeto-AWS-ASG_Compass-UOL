@@ -56,6 +56,7 @@ O **Classic Load Balancer (CLB)** foi criado com sucesso, distribuindo o tráfeg
 Essa configuração permitirá, nas próximas etapas, a criação do **Auto Scaling Group (ASG)** com balanceamento de carga entre múltiplas instâncias.
 
 ![Print da Tela de criação e configuração do CLB](img/06-etapa6-clb.png)
+![Print da Tela do navegador com acesso à intância via DNS do CLB](img/07-etapa6-clb.png)
 
 ---
 
